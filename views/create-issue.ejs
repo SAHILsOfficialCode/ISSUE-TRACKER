@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Issue Tracker - Create Issue</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container mt-4">
+    <h1 class="mb-4">Create New Issue for <%= project.name %></h1>
+    <form action="/projects/<%= project.id %>/create-issue" method="POST">
+      <div class="form-group">
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" class="form-control" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="labels">Labels (comma-separated):</label>
+        <input type="text" id="labels" name="labels" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="author">Author:</label>
+        <input type="text" id="author" name="author" class="form-control" required>
+      </div>
+      <div class="button-container">
+        <button type="submit" class="btn btn-primary">Create Issue</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

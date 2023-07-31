@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Issue Tracker - Project Detail: <%= project.name %></title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container mt-4">
+    <h1><%= project.name %></h1>
+    <p><%= project.description %></p>
+    <p>Author: <%= project.author %></p>
+    <h2>Issues:</h2>
+    <% project.issues.forEach(issue => { %>
+    <div class="card mb-3">
+      <div class="card-body">
+        <h3 class="card-title"><%= issue.title %></h3>
+        <p class="card-text"><%= issue.description %></p>
+        <div class="label-container">
+          <% issue.labels.forEach(label => { %>
+          <span class="label badge badge-primary"><%= label %></span>
+          <% }) %>
+        </div>
+        <p class="card-text">Author: <%= issue.author %></p>
+      </div>
+    </div>
+    <% }) %>
+    <a href="/projects/<%= project.id %>/create-issue" class="btn btn-primary mt-4">Create New Issue</a>
+  </div>
+</body>
+</html>

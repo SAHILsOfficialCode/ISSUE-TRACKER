@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Issue Tracker - Home</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container mt-4">
+    <h1 class="mb-4">Issue Tracker</h1>
+    <h2>Projects:</h2>
+    <ul class="list-group">
+      <% projects.forEach(project => { %>
+      <li class="list-group-item"><a href="/projects/<%= project.id %>"><%= project.name %></a></li>
+      <% }) %>
+    </ul>
+    <a href="/create-project" class="btn btn-primary mt-4">Create New Project</a>
+  </div>
+</body>
+</html>
